@@ -1,0 +1,30 @@
+{
+  "name": "rybak-corp",
+  "version": "1.0.0",
+  "description": "RYBAK corp. — premium portfolio website",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "electron": "electron .",
+    "package": "npm run build && electron-builder --win portable"
+  },
+  "dependencies": {
+    "electron": "^38.2.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.9.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.4",
+    "electron-builder": "^26.0.12",
+    "vite": "^7.1.7"
+  },
+  "build": {
+    "appId": "com.rybakcorp.studio",
+    "productName": "RYBAK corp.",
+    "directories": {"output": "release"},
+    "files": ["dist/**/*", "electron/**/*", "package.json"],
+    "win": {"target": [{"target": "portable", "arch": ["x64"]}]}
+  }
+}
